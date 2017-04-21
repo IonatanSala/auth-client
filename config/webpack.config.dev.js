@@ -163,7 +163,7 @@ module.exports = {
       // Parse less files and modify variables
       {
         test: /\.less$/,
-        loader: 'style!css!postcss!less?{modifyVars:{"@primary-color":"red"}}'
+        loader: 'style!css!postcss!less?{modifyVars:{"@primary-color":"#3B5998"}}'
       },
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.

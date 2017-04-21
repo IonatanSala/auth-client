@@ -136,7 +136,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'css?sourceMap&!' +
           'postcss!' +
-          'less-loader?{"sourceMap":true,"modifyVars":{"@primary-color":"#1DA57A"}}'
+          'less-loader?{"sourceMap":true,"modifyVars":{"@primary-color":"#3B5998"}}'
         ),
       },
       // The notation here is somewhat confusing.
