@@ -1,0 +1,9 @@
+import React from 'react';
+
+const SignIn = props => (
+  <section>
+    <h1>Sign In</h1>
+  </section>
+);
+
+export default SignIn;

@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import {
   BrowserRouter,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
+
+import SignInContainer from '../authentication/signin/SignInContainer';
+import SignUpContainer from '../authentication/signup/SignUpContainer';
+import VerifyEmailContainer from '../authentication/verifyEmail/VerifyEmailContainer';
+import SendVerificationEmailContainer from '../authentication/verifyEmail/SendVerificationEmailContainer';
+import SendResetPasswordContainer from '../authentication/resetPassword/SendResetPasswordContainer';
+import ResetPasswordContainer from '../authentication/resetPassword/ResetPasswordContainer';
 
 class Router extends Component {
 
@@ -11,12 +18,12 @@ class Router extends Component {
       <BrowserRouter >
         <section>
           <Route exact path="/" render={ (props) => ( <h1>Home Page</h1> )} />
-          <Route path="/signin" render={ (props) => (<h1>Signin</h1>) } />
-          <Route path="/signup" render={ (props) => (<h1>Signup</h1>) } />
-          <Route exact path="/verifyEmail" render={ (props) => (<h1>VerifyEmail</h1>) } />
-          <Route path="/verifyEmail/:id/:emailKey" render={ (props) => (<h1>VerifyEmail: {props.match.params.id} {props.match.params.emailKey}</h1>) } />
-          <Route exact path="/resetPassword" render={ (props) => (<h1>Reset Password</h1>) } />
-          <Route path="/resetPassword/:id/:passwordKey" render={ (props) => (<h1>Reset Password: {props.match.params.id} {props.match.params.passwordKey}</h1>) } />
+          <Route path="/signin" component={SignInContainer} />
+          <Route path="/signup" component={SignUpContainer} />
+          <Route path="/verify/:userID/:emailKey" component={VerifyEmailContainer} />
+          <Route path="/sendVerificationEmail" component={SendVerificationEmailContainer} />
+          <Route exact path="/resetPassword" component={SendResetPasswordContainer} />
+          <Route path="/resetPassword/:id/:resetKey" component={ResetPasswordContainer} />
         </section>
       </BrowserRouter>
     );
