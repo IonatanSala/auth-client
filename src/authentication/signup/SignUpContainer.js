@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import SignUp from './SignUp';
+import { createAccount } from '../../redux/actions/authenticationActions';
 
 class SignUpContainer extends Component {
+
   render = () => {
     return (
-      <SignUp />
+      <SignUp onSubmit={createAccount} />
     );
   }
 }
 
-
-export default SignUpContainer;
+export default withRouter(connect()(SignUpContainer));
