@@ -3,18 +3,21 @@ import { Field, reduxForm } from 'redux-form';
 import { Button, Card, Col, Row } from 'antd';
 import { signUpValidate } from '../validate';
 import { renderField } from '../renderField';
-import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, MainSectionContainer, StyledRow } from '../authStyledComponents';
+import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
 const SignUp = ({ handleSubmit }) => (
   <MainSectionContainer>
     <StyledRow type="flex" justify="center" >
-      <Col xs={24} sm={12} md={10} >
+      <Col xs={23} sm={12} md={10} >
         <AuthCard>
           <form onSubmit={handleSubmit}>
             <Row type="flex" justify="center" >
-            <Col xs={24} sm={18} md={14}>
-              <AuthCardTitle>Create your free account</AuthCardTitle>
-            </Col>
+              <Col xs={24} sm={18} md={14}>
+                <Logo src="https://dashboard.messagebird.com/assets/images/logo/logo-icon.svg" alt="logo"/>
+              </Col>
+              <Col xs={24} sm={18} md={14}>
+                <AuthCardTitle>Create your free account</AuthCardTitle>
+              </Col>
               <Col xs={24} sm={18} md={14}>
                 <Field name="email" type="email" placeholder="Email" component={renderField} label="Email" />
               </Col>
@@ -28,7 +31,7 @@ const SignUp = ({ handleSubmit }) => (
                 <AuthSubmitButton type="primary" size="large" htmlType="submit">Sign up</AuthSubmitButton>
               </Col>
               <Col xs={24} sm={18} md={14}>
-                <AuthCardText>Already have an account? <AuthCardLink to="/signin" >Sign in here</AuthCardLink></AuthCardText>
+                <AuthCardText>Already have an account? <AuthCardLink to="/signin" >Sign in</AuthCardLink></AuthCardText>
               </Col>
             </Row>
           </form>
