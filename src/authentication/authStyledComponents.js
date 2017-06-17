@@ -1,9 +1,11 @@
 import { Button, Card, Input as AntdInput, Row } from 'antd';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const backgroundColor = '#F7FAFD';
 const textColor = '#9aa8be';
 const inputBorder = '#d6e0f1';
+const black = '#4a5669';
 
 export const MainSectionContainer = styled.section`
   background-color: ${backgroundColor};
@@ -47,7 +49,7 @@ export const Input = styled(AntdInput)`
   border-radius: 0;
   height: 3.3em;
   border: 1px solid ${inputBorder};
-  font-weight: 400;
+  font-weight: 500;
 
 
   &:placeholder {
@@ -58,7 +60,29 @@ export const Input = styled(AntdInput)`
 export const P = styled.p`
   text-transform: uppercase;
   color: ${textColor};
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.1em;
   letter-spacing: 1px;
+`;
+
+export const AuthCardText = styled.p`
+  margin-top: 2em;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.1em;
+  color: ${textColor};
+`;
+
+export const AuthCardLink = styled(Link)`
+  color: ${textColor};
+  font-weight: bold;
+
+`;
+
+export const AuthCardTitle = styled.h3`
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.2em;
+  color: ${black};
+  margin-bottom: 1.5em;
 `;

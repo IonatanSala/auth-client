@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Button, Card, Col, Row } from 'antd';
 import { signUpValidate } from '../validate';
 import { renderField } from '../renderField';
-import { AuthSubmitButton, AuthCard, MainSectionContainer, StyledRow } from '../authStyledComponents';
+import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
 const SignUp = ({ handleSubmit }) => (
   <MainSectionContainer>
@@ -12,6 +12,9 @@ const SignUp = ({ handleSubmit }) => (
         <AuthCard>
           <form onSubmit={handleSubmit}>
             <Row type="flex" justify="center" >
+            <Col xs={24} sm={18} md={14}>
+              <AuthCardTitle>Create your free account</AuthCardTitle>
+            </Col>
               <Col xs={24} sm={18} md={14}>
                 <Field name="email" type="email" placeholder="Email" component={renderField} label="Email" />
               </Col>
@@ -23,6 +26,9 @@ const SignUp = ({ handleSubmit }) => (
               </Col>
               <Col xs={24} sm={18} md={14}>
                 <AuthSubmitButton type="primary" size="large" htmlType="submit">Sign up</AuthSubmitButton>
+              </Col>
+              <Col xs={24} sm={18} md={14}>
+                <AuthCardText>Already have an account? <AuthCardLink to="/signin" >Sign in here</AuthCardLink></AuthCardText>
               </Col>
             </Row>
           </form>

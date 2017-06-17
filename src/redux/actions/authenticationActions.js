@@ -6,7 +6,7 @@ import { API_ENDPOINT, CREATE_ACCOUNT } from './actionTypes';
 export function createAccount(values, dispatch) {
   const { email, password } = values;
   const newUser = { email, password };
-
+  const message = 'A confirmation email has been sent to your email address. Please click the link in the email to verify your account.'
   return axios.post(`${API_ENDPOINT}/users`, newUser)
     .then((res) => {
       console.log(res);
