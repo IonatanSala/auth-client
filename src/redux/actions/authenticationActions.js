@@ -3,7 +3,6 @@ import { SubmissionError } from 'redux-form';
 import { notification } from 'antd';
 import { API_ENDPOINT, CREATE_ACCOUNT } from './actionTypes';
 
-
 export function createAccount(values, dispatch) {
   const { email, password } = values;
   const newUser = { email, password };
