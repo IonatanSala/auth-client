@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import SendVerificationEmail from './SendVerificationEmail';
+import { resendConfirmationInstructions } from '../../redux/actions/authenticationActions';
 
 class SendVerificationEmailContainer extends Component {
   render = () => {
     return (
-      <SendVerificationEmail />
+      <SendVerificationEmail onSubmit={resendConfirmationInstructions} />
     );
   }
 }

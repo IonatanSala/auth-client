@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Button, Card, Col, Row } from 'antd';
-import { signUpValidate } from '../validate';
+import { newPasswordValidate } from '../validate';
 import { renderField } from '../renderField';
 import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
@@ -37,5 +37,5 @@ const ResetPassword = ({ handleSubmit }) => (
 
 export default reduxForm({
   form: 'ResetPassword',
-  validate: signUpValidate
+  validate: newPasswordValidate
 })(ResetPassword);

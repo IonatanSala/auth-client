@@ -5,7 +5,7 @@ import { signUpValidate } from '../validate';
 import { renderField } from '../renderField';
 import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
-const SignUp = ({ handleSubmit }) => (
+const SignUp = ({ handleSubmit, loading }) => (
   <MainSectionContainer>
     <StyledRow type="flex" justify="center" >
       <Col xs={23} sm={12} md={10} >

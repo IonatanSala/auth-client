@@ -2,10 +2,10 @@ import { Button, Card, Input as AntdInput, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const backgroundColor = '#F7FAFD';
-const textColor = '#9aa8be';
-const inputBorder = '#d6e0f1';
-const black = '#4a5669';
+export const backgroundColor = '#F7FAFD';
+export const textColor = '#9aa8be';
+export const inputBorder = '#d6e0f1';
+export const black = '#4a5669';
 
 export const MainSectionContainer = styled.section`
   background-color: ${backgroundColor};
@@ -41,7 +41,7 @@ export const AuthSubmitButton = styled(Button)`
   box-shadow: 0 7px 14px rgba(36,129,215,0.1), 0 3px 6px rgba(36,129,215,0.08);
   transition: .5s;
   margin-bottom: 2em;
-  
+
   &:hover {
     transform: translateY(-1px);
   }

@@ -8,9 +8,15 @@ class SignUpContainer extends Component {
 
   render = () => {
     return (
-      <SignUp onSubmit={createAccount} />
+      <SignUp onSubmit={createAccount} loading={this.props.loading} />
     );
   }
 }
 
-export default withRouter(connect()(SignUpContainer));
+function mapStateToProps({ loading }) {
+  return {
+    loading
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(SignUpContainer));

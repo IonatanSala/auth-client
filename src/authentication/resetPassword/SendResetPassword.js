@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Button, Card, Col, Row } from 'antd';
-import { signUpValidate } from '../validate';
+import { resendEmailVerificationValidate } from '../validate';
 import { renderField } from '../renderField';
 import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
@@ -39,5 +39,6 @@ const SendResetPassword = ({ handleSubmit }) => (
 );
 
 export default reduxForm({
-  form: 'SendResetPassword'
+  form: 'SendResetPassword',
+  validate: resendEmailVerificationValidate
 })(SendResetPassword);

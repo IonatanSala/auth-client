@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import SendResetPassword from './SendResetPassword';
+import { sendResetInstructions } from '../../redux/actions/authenticationActions';
 
 class SendResetPasswordContainer extends Component {
   render = () => {
     return (
-      <SendResetPassword />
+      <SendResetPassword onSubmit={sendResetInstructions} />
     );
   }
 }
 
 
-export default SendResetPasswordContainer;
+export default withRouter(SendResetPasswordContainer);

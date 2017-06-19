@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Button, Card, Col, Row } from 'antd';
-import { signUpValidate } from '../validate';
+import { signInValidate } from '../validate';
 import { renderField } from '../renderField';
 import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';
 
@@ -42,5 +42,6 @@ const SignIn = ({ handleSubmit }) => (
 );
 
 export default reduxForm({
-  form: 'SignIn'
+  form: 'SignIn',
+  validate: signInValidate
 })(SignIn);

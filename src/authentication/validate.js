@@ -22,6 +22,44 @@ const signUpValidate = values => {
   return errors;
 }
 
+const signInValidate = values => {
+  const errors = {};
+
+  if(!values.email) {
+    errors.email = "Email is required";
+  } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  return errors;
+}
+
+const resendEmailVerificationValidate = values => {
+  const errors = {};
+
+  if(!values.email) {
+    errors.email = "Email is required";
+  } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = "Invalid email address";
+  }
+
+  return errors;
+}
+
+export const newPasswordValidate = values => {
+  const errors = {};
+
+  if(!values.newPassword) {
+    errors.newPassword = "New password is required";
+  } else if(values.newPassword.length < 8) {
+    errors.newPassword = "Password too short"
+  }
+
+  return errors;
+}
+
 export {
-  signUpValidate
+  signUpValidate,
+  signInValidate,
+  resendEmailVerificationValidate
 };
