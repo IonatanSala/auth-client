@@ -51,12 +51,6 @@ export function signIn(values, dispatch) {
         });
         throw new SubmissionError({ email: err.response.data.errors.message });
       } else {
-        notification.error({
-          message: 'Sign in error',
-          description: 'User doesn\'t exist with them credentials',
-          duration: null
-        });
-
         throw new SubmissionError({ email: 'Wrong credentials', password: 'Wrong credentials' });
       }
     });
@@ -144,7 +138,7 @@ export function resetPassword(values, dispatch) {
       console.log(err.response);
       notification.error({
         message: 'Error',
-        description: 'Something went wrong. Please make sure you clicked the latest link in your email to changed your password.',
+        description: 'Something went wrong. Please make sure you clicked the latest link in your email to change your password.',
         duration: null
       });
     })
