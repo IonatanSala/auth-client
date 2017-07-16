@@ -12,6 +12,8 @@ import SendVerificationEmailContainer from '../authentication/verifyEmail/SendVe
 import SendResetPasswordContainer from '../authentication/resetPassword/SendResetPasswordContainer';
 import ResetPasswordContainer from '../authentication/resetPassword/ResetPasswordContainer';
 
+import RequireAuthenticationHOC from '../HOC/RequireAuthenticationHOC';
+
 class Router extends Component {
 
   render = () => {
