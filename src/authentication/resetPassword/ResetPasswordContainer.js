@@ -7,7 +7,6 @@ import { resetPassword } from '../../redux/actions/authenticationActions';
 class ResetPasswordContainer extends Component {
   render = () => {
     const { params } = this.props.match;
-    console.log(params);
     return (
       <ResetPassword onSubmit={resetPassword} initialValues={params} />
     );

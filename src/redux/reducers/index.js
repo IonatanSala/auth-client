@@ -6,7 +6,7 @@ import requestsReducer from './requestsReducer';
 
 const reducers = combineReducers({
   form: formReducer,
-  authentication: authenticationReducer,
+  user: authenticationReducer,
   loading: loadingReducer,
   requests: requestsReducer
 });

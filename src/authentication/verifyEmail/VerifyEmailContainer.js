@@ -8,6 +8,7 @@ import { responseStatus } from '../../redux/actions/requestActions';
 class VerifyEmailContainer extends Component {
   componentDidMount = () => {
     this.props.verifyEmailAddress(this.props.match.params);
+    console.log(this.props.responseStatus);
   }
 
   componentWillUnmount = () => {
@@ -15,16 +16,16 @@ class VerifyEmailContainer extends Component {
   }
 
   render = () => {
-
+    debugger
     return (
-      <VerifyEmail responseStatus={this.props.responseStatus} />
+      <VerifyEmail responseStatus={this.props.responseStatusProp} />
     );
   }
 }
 
 function mapStateToProps({ requests: { responseStatus } }) {
   return {
-    responseStatus
+    responseStatusProp: responseStatus
   }
 }
 export default withRouter(connect(mapStateToProps, { verifyEmailAddress, responseStatus })(VerifyEmailContainer));

@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { SubmissionError } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { notification, message } from 'antd';
-import { API_ENDPOINT, LOADING } from './actionTypes';
+import { notification } from 'antd';
+import { API_ENDPOINT, SIGN_IN, SIGN_OUT} from './actionTypes';
 import { loading, responseStatus } from './requestActions';
 
 export function createAccount(values, dispatch) {
@@ -33,11 +32,19 @@ export function createAccount(values, dispatch) {
 
 export function signIn(values, dispatch) {
   const userDetails = values;
-
   return axios.post(`${API_ENDPOINT}/authentication`, userDetails)
     .then((res) => {
-      console.log('Success');
-      console.log(res);
+      // save token in localstorage
+      const jwtToken = res.data.token;
+      addToken(jwtToken);
+
+      // set authenticated to true
+      dispatch({
+        type: SIGN_IN
+      });
+
+      // TODO
+      // redirect to desired route
     })
     .catch((err) => {
       console.log('Error');
@@ -54,6 +61,16 @@ export function signIn(values, dispatch) {
         throw new SubmissionError({ email: 'Wrong credentials', password: 'Wrong credentials' });
       }
     });
+}
+
+export function signOut() {
+  // remove token from local storage
+  removeToken()
+
+  // dispatch
+  return {
+    type: SIGN_OUT
+  };
 }
 
 export function resendConfirmationInstructions(values, dispatch) {
@@ -142,4 +159,16 @@ export function resetPassword(values, dispatch) {
         duration: null
       });
     })
+}
+
+function removeToken() {
+  window.localStorage.removeItem('jwt');
+}
+
+function addToken(token) {
+  window.localStorage.setItem('jwt', token);
+}
+
+export function getToken() {
+  return window.localStorage.getItem('jwt');
 }

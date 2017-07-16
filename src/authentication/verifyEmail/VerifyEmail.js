@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, Col, Icon, Row } from 'antd';
+import { Col, Icon, Row } from 'antd';
 import styled from 'styled-components';
-import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow, textColor } from '../authStyledComponents';
+import { AuthCardTitle, AuthSubmitButton, AuthCard, MainSectionContainer, StyledRow, textColor } from '../authStyledComponents';
 
 const EmailIcon = styled(Icon)`
   display: block;
