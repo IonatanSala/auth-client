@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import SignInContainer from '../authentication/signin/SignInContainer';
+import SignOutContainer from '../authentication/signout/SignOutContainer';
 import SignUpContainer from '../authentication/signup/SignUpContainer';
 import VerifyEmailContainer from '../authentication/verifyEmail/VerifyEmailContainer';
 import SendVerificationEmailContainer from '../authentication/verifyEmail/SendVerificationEmailContainer';
@@ -19,6 +20,7 @@ class Router extends Component {
         <section>
           <Route exact path="/" render={ (props) => ( <h1>Home Page</h1> )} />
           <Route path="/signin" component={SignInContainer} />
+          <Route path="/signout" component={SignOutContainer} />
           <Route path="/signup" component={SignUpContainer} />
           <Route path="/verify/:userID/:emailKey" component={VerifyEmailContainer} />
           <Route path="/sendVerificationEmail" component={SendVerificationEmailContainer} />

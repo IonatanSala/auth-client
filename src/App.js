@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Router from './routes/Router';
 
@@ -11,12 +12,19 @@ const Section = styled.section`
 
 class App extends Component {
   render() {
+    const { authenticated } = this.props;
     return (
       <Section className="application-container">
+        { authenticated && 'You are authenticated' }
+        { !authenticated && 'You are not authenticated' }
         <Router />
       </Section>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({ user: { authenticated }}) => ({
+  authenticated,
+});
+
+export default connect(mapStateToProps)(App);
