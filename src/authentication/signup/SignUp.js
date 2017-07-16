@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Button, Card, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { signUpValidate } from '../validate';
 import { renderField } from '../renderField';
 import { AuthCardTitle, AuthCardText, AuthCardLink, AuthSubmitButton, AuthCard, Logo, MainSectionContainer, StyledRow } from '../authStyledComponents';

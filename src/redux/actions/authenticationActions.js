@@ -1,9 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { SubmissionError } from 'redux-form';
-import { Link } from 'react-router-dom';
-import { notification, message } from 'antd';
-import { API_ENDPOINT, LOADING, SIGN_IN, SIGN_OUT} from './actionTypes';
+import { notification } from 'antd';
+import { API_ENDPOINT, SIGN_IN, SIGN_OUT} from './actionTypes';
 import { loading, responseStatus } from './requestActions';
 
 export function createAccount(values, dispatch) {
