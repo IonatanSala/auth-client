@@ -2,7 +2,7 @@ export const API_ENDPOINT =
   process.env.NODE_ENV === 'production'
     ? 'http://localhost:123'
     : 'http://localhost:8000';
-
+    
 export const CREATE_ACCOUNT = 'CREATE_ACCOUNT';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
