@@ -3,6 +3,7 @@ export const API_ENDPOINT =
     ? process.env.API_ENDPOINT
     : 'http://localhost:8000';
 
+debugger
 export const CREATE_ACCOUNT = 'CREATE_ACCOUNT';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
